@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<basepage:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:basepage="clr-namespace:DemoCognitiveServices.Views"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="true"
+    xmlns:syncfusion="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    xmlns:local="clr-namespace:DemoCognitiveServices"
+    x:Class="DemoCognitiveServices.Views.ChatWithTextAnalyticsPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:MessageTemplateSelector
+                x:Key="messageTemplateSelector" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid
+            RowSpacing="0"
+            ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="*" />
+                <RowDefinition
+                    Height="Auto" />
+            </Grid.RowDefinitions>
+            <!--Messages in Row 0 -->
+            <syncfusion:SfListView
+                AutoFitMode="Height"
+                x:Name="listViewForMessages"
+                ItemsSource="{Binding Messages}"
+                ItemTemplate="{StaticResource messageTemplateSelector}"
+                ItemSize="140">
+            </syncfusion:SfListView>
+            <!-- Entry and Send button in Row 1 -->
+            <StackLayout
+                Orientation="Horizontal"
+                Grid.Row="1"
+                Padding="10"
+                BackgroundColor="#EFEFEF">
+                <Entry
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="25"
+                    ReturnCommand="{Binding SendMessageCommand}"
+                    Placeholder="Digite aqui"
+                    IsTextPredictionEnabled="false"
+                    FontSize="Micro"
+                    Text="{Binding OutGoingText}" />
+                <ImageButton
+                    Aspect="AspectFill"
+                    HeightRequest="40"
+                    WidthRequest="40"
+                    Style="{StaticResource btnInactiveSendMessage}"
+                    Command="{Binding SendMessageCommand}">
+                    <ImageButton.Triggers>
+                        <Trigger
+                            TargetType="ImageButton"
+                            Property="IsEnabled"
+                            Value="True">
+                            <Setter
+                                Property="Style"
+                                Value="{StaticResource btnActiveSendMessage}" />
+                        </Trigger>
+                    </ImageButton.Triggers>
+                </ImageButton>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</basepage:BaseContentPage>

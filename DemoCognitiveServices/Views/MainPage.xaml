@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<basepage:BaseContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:basepage="clr-namespace:DemoCognitiveServices.Views"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding Title}"
+    x:Name="Root"
+    x:Class="DemoCognitiveServices.Views.MainPage">
+    <ContentPage.Content>
+        <Grid
+            RowSpacing="10"
+            VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition
+                    Height="Auto" />
+                <RowDefinition
+                    Height="Auto" />
+                <RowDefinition
+                    Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label
+                Grid.Row="0"
+                HorizontalOptions="Center"
+                Text="Azure Global BootCamp - DEMO"
+                TextDecorations="Underline"
+                FontSize="22"
+                TextColor="Blue"
+                LineBreakMode="NoWrap"
+                FontAttributes="Bold" />
+            <StackLayout
+                Grid.Row="2">
+                <Button
+                    WidthRequest="200"
+                    HorizontalOptions="Center"
+                    Text="Text Analytics"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    TextColor="WhiteSmoke"
+                    BorderColor="Crimson"
+                    BackgroundColor="Crimson"
+                    CornerRadius="25"
+                    Command="{Binding TextAnalyticsCommand}" />
+                <Button
+                    WidthRequest="200"
+                    HorizontalOptions="Center"
+                    Text="LUIS"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    TextColor="WhiteSmoke"
+                    BorderColor="Crimson"
+                    BackgroundColor="Crimson"
+                    CornerRadius="25"
+                    Command="{Binding LUISCommand}" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</basepage:BaseContentPage>

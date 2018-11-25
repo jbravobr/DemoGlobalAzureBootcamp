@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<prism:PrismApplication
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:prism="clr-namespace:Prism.DryIoc;assembly=Prism.DryIoc.Forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DemoCognitiveServices.App">
+    <prism:PrismApplication.Resources>
+        <ResourceDictionary>
+            <Style
+                x:Key="btnActiveSendMessage"
+                TargetType="ImageButton">
+                <Setter
+                    Property="Source"
+                    Value="send.png" />
+            </Style>
+            <Style
+                x:Key="btnInactiveSendMessage"
+                TargetType="ImageButton">
+                <Setter
+                    Property="Source"
+                    Value="sendinactive.png" />
+            </Style>
+        </ResourceDictionary>
+    </prism:PrismApplication.Resources>
+</prism:PrismApplication>
