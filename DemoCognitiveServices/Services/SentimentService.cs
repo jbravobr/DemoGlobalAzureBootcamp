@@ -18,7 +18,7 @@ namespace DemoCognitiveServices.Services
     {
         //Base URL (Exemplo): https://westus.api.cognitive.microsoft.com
         const string _sentimentAPIBaseUrl = "https://brazilsouth.api.cognitive.microsoft.com/";
-        const string _textSentimentAPIKey = "839d6dc11bcd46d2bb325556f686ebd7";
+        const string _textSentimentAPIKey = "INSIRA_SUA_CHAVE_AQUI";
 
         //Wrapper HttpClient para acessar a API TextAnalytics
         readonly TextAnalyticsClient _textAnalyticsApiClient = new TextAnalyticsClient(new ApiKeyServiceClientCredentials(_textSentimentAPIKey))
