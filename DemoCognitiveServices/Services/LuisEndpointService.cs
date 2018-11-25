@@ -23,7 +23,7 @@ namespace DemoCognitiveServices.Services
             var queryString = HttpUtility.ParseQueryString(string.Empty);
 
             var luisAppId = "df85f719-7b42-4699-9280-001beffa80b8";
-            var subscriptionKey = "f2b4cf14f7c74165b6cb8784b48600a4";
+            var subscriptionKey = "INSIRA_SUA_CHAVE_AQUI";
 
             client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
 
